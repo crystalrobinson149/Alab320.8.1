@@ -1,25 +1,27 @@
-import Main from "./pages/Main";
-import Profile from "./pages/Profile";
-import { Routes, Route } from "react-router-dom";
-import "./App.css";
-import Nav from "./components/Nav";
-import Footer from "./components/Footer";
+import './App.css'
+// Import Route and our components
+import { Route, Routes } from "react-router-dom";
+import Currencies from './pages/Currencies';
+import Main from './pages/Main';
+import Price from './pages/Price';
+import Nav from './components/Nav';
 
 function App() {
-  return (
-    <div>
-      <h1>App Router</h1>
+  // We will use the Route component, path attribute, and element attribute to specify each route.
+   
 
+  return (
+    <div className="App">
       <Nav />
 
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/profile/:id" element={<Profile />} />
+        <Route path="/currencies" element={<Currencies />} />
+        <Route path="/price/:symbol" element={<Price />} /> // added /:symbol
       </Routes>
-
-      <Footer />
+      
     </div>
   );
 }
 
-export default App;
+export default App
