@@ -1,13 +1,15 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
-
-function Nav() {
+export default function Nav (props) {
     return (
-        <nav>
-            <Link to="/">Home</Link>
-            <Link to="/profile">Profile</Link>
-        </nav>
-    )
-}
+        <div className="nav">
+            <Link to="/">
+            <div>CRYPTO PRICES</div>
+            </Link>
 
-export default Nav;
+            <Link to="/currencies">
+            <div>CURRENCIES</div>
+            </Link>
+        </div>
+    );
+}
